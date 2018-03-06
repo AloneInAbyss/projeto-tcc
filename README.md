@@ -6,11 +6,18 @@ O objetivo de nosso trabalho é desenvolver um site para web, de fácil uso, res
 
 ## Integrantes
 Caio Lemes
+
 Iago Faria
+
 Thiago Assi
+
 Caroline Adorno
+
 Laura Ribeiro
+
 Mariana Cardoso
+
 Joel Vagner
+
 
 3º ETIM Informática
