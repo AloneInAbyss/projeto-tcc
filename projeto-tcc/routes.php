@@ -5,10 +5,19 @@
 switch ($uri) {
     
     case '/':
-        $Controller->index();
+        $Controller->paginainicial();
+        break;
+
+    case '/materia-matematica':
+    case '/materia-quimica':
+    case '/materia-fisica':
+    case '/materia-biologia':
+    case '/materia-geografia':
+    case '/materia-historia':
+        $Controller->materias();
         break;
         
     default:
-        die('Invalid Route! Error 404');
+        $Controller->erro404();
         break;
 }
