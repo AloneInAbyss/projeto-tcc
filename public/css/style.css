@@ -1,0 +1,211 @@
+/* ------------------------------------------------------------
+                            NOTAS
+
+    Este é o arquivo de CSS geral, de todo o site.
+    Quando for criar um CSS que só é aplicado em uma única página,
+    não use este arquivo.
+
+    Nos comentários, há algumas notas entre chaves [ ], explicando 
+    como usar certo código.
+
+------------------------------------------------------------ */
+
+/* ESTILOS GERAIS */
+
+  body {
+    /* FONTE PERSONALIZADA DO GOOGLE FONTS */
+    font-family: 'Asap', sans-serif;
+    /* ESPAÇAMENTO APÓS A NAVBAR */
+    padding-top: 100px;
+    /* ESPAÇAMENTO NO FIM DO SITE */
+    padding-bottom: 3rem;
+  }
+
+  *::selection {
+    background: rgb(254, 177, 114);
+    color: white;
+}
+
+ /*.cor2::selection {
+  background: rgb(51,108,133);
+  color: white;
+}/*
+
+  /* CHECKBOX BUTTON MODO NOTURNO*/
+  .box_1{
+    background: #1E5C8A;
+  }
+  
+  input[type="checkbox"].switch_1{
+    font-size: 30px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 3.5em;
+    height: 1.5em;
+    background: #ddd;
+    border-radius: 3em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    
+    input[type="checkbox"].switch_1:checked{
+    background: #0ebeff;
+    }
+    
+    input[type="checkbox"].switch_1:after{
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+            box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    -webkit-transform: scale(.7);
+            transform: scale(.7);
+    left: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+
+    input[type="checkbox"].switch_1:checked:after{
+      left: calc(100% - 1.5em);
+      }
+
+/* ALTERAÇÕES NA NAVBAR */
+  .navbar {
+    /* AUMENTA O TAMANHO DA NAVBAR */
+    min-height: 100px;
+  }
+
+  .navbar-brand {
+    /* ESPAÇAMENTO, TAMANHO, TAMANHO DA LINHA */
+    padding: 0 15px;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  /* .navbar-toggle {
+    // (80px - button height 34px) / 2 = 23px
+    margin-top: 23px;
+    padding: 9px 10px !important;
+  } */
+
+  /* ADICIONA UM ESPAÇAMENTO NAS PÁGINAS COM ESSA CLASSE */
+  .container.marketing {
+    padding-top: 50px;
+  }
+
+  /* ESPAÇO ABAIXO DO TÍTULO */
+  .page-header {
+    padding-bottom: 15px;
+  }
+
+  .titulo {
+    padding-top: 10px;
+  }
+
+  .titulo-principal {
+    padding-top: 50px;
+  }
+
+/* ------------------------------------------------------------ */
+
+/* PERSONALIZAÇÃO */
+
+  /* [USE A CLASSE 'linha-divisoria' EM TAGS <hr> PARA ADICIONAR UMA MARGEM] */
+  .linha-divisoria {
+    /* ESPAÇAMENTO ENTRE <hr> */
+    margin: 5rem 0;
+  }
+
+  /* DESATIVAR AS DECORAÇÕES NOS LINKS */
+  /* [USE A CLASSE 'link' PARA TIRAR A DECORAÇÃO DOS LINKS] */
+  .link a:link,
+  .link a:visited,
+  .link a:link:active,
+  .link a:visited:active {
+      text-decoration: none;
+      color: rgb(120, 120, 120);
+  }
+
+  .link a:hover, .link input:hover {
+    /* COLOCA UMA SOMBRA SOBRE O LINK */
+    text-shadow: 0.1px 0.1px 1px rgb(90, 90, 90);
+  }
+
+/* ------------------------------------------------------------ */
+
+/* CORES */
+
+  body {
+    /* COR DO PLANO DE FUNDO */
+    background-color: rgb(197, 230, 255);
+    /* COR DO TEXTO */
+    color: rgb(90, 90, 90);
+  }
+
+  /* COR DO FORMULÁRIO DA NAVBAR */
+  .form-control:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 0.2rem #fff;
+  }
+
+  /* COR DO BACKGROUND DA NAVBAR */
+  .navbar-dark {
+    background-color: rgb(30, 92, 138);
+  }
+
+  /* COR DO <hr> */
+  hr {
+    border-top-color: #fff;
+  }
+
+  /* BOTÃO DA BUSCA NAVBAR */
+    .btn-outline-success {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .btn-outline-success:hover {
+      color: #fff;
+      background-color: rgb(90, 90, 90);
+      border-color: rgb(90, 90, 90);
+    }
+
+    .btn-outline-success:focus, .btn-outline-success.focus {
+      box-shadow: 0 0 0 0.2rem #fff;
+    }
+
+    .btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-success.dropdown-toggle {
+      color: #fff;
+      background-color: rgb(90, 90, 90);
+      border-color: #fff;
+    }
+
+    .btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-outline-success.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem #fff;
+    }
+  /* */
+
+  /* [USE A CLASSE 'texto-branco' PARA MUDAR A COR PARA BRANCO] */
+  .texto-branco {
+    color: #fff !important;
+  }
+
+  /* [USE A CLASSE 'texto-cinza' PARA MUDAR A COR PARA CINZA] */
+  .texto-cinza {
+    color: rgb(90, 90, 90);
+  }
+  
+  
+/* ------------------------------------------------------------- */
+/* CÓDIGOS PARA OUTRAS PARTES DO SITE */
+/* ~~ [ATENÇÃO! SÓ USE ESSA SEÇÃO PARA TESTES] ~~ */
+

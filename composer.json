@@ -1,0 +1,13 @@
+{
+    "name": "tcc/project",
+
+    "description": "trabalho de conclusão de curso",
+
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "Project\\" : "app"
+        }
+    }
+}

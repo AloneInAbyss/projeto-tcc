@@ -1,0 +1,44 @@
+/* AQUI VAI O CSS DA PÁGINA INICIAL */
+
+.links-materias {
+  /* NOS LINKS DEIXA O ESPAÇO ENTRE LETRAS MENOR */
+  line-height: 1;
+  letter-spacing: -.05rem;
+  /* CENTRALIZA O TEXTO */
+  text-align: center;
+}
+
+/* ESPAÇO ENTRE LINHAS */
+.links-materias .row {
+  padding-top: 15px;
+}
+
+/* PADDING NO TÍTULO DA MATÉRIA */
+.links-materias h2 {
+  padding-top: 5px;
+}
+
+/* DEIXA OS LINKS DAS MATÉRIAS EM LETRA MAIÚSCULA */
+
+.links-materias input {
+  margin-top: 15px;
+  text-transform: uppercase;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+img {
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
+.logos:hover {
+  box-shadow: 1px 0px 20px 0.5px #8FA7BA;
+}

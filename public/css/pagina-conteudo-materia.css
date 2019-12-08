@@ -1,0 +1,72 @@
+/* AQUI VAI O CSS DA PÁGINA COM O CONTEÚDO DA MATÉRIA */
+
+/* BOTÃO FLUTUANTE */
+    .float {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        bottom: 200px;
+        right: 40px;
+        background-color:#ffffff;
+        color:rgb(90, 90, 90);
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+        border: 5px solid rgb(30, 92, 138);
+    }  
+
+    .my-float{
+        margin-top: 50px;
+    }
+
+    /* Modificando o Bootstrap */
+    .button-float {
+        color: rgb(30, 92, 138);
+        border-color: rgb(30, 92, 138);
+    }
+
+    .button-float:hover {
+        background-color: rgb(90, 90, 90);
+        border-color: rgb(90, 90, 90);
+    }
+
+    .button-float:active {
+        background-color: rgb(90, 90, 90) !important;
+        border-color: rgb(90, 90, 90) !important;
+        box-shadow: 0 0 0 0.2rem #fff !important;
+    }
+
+    /* Ocultar em dispositivos pequenos */
+    @media (max-width: 55em) {
+        .div-ocultar {
+            position: relative;
+        }
+
+        .float {
+            width:80%;
+            height:80%;
+            bottom:0px;
+            left:10%;
+            padding-bottom: 20px;
+        }
+    }
+/* */
+
+
+.links-materias {
+    display: inline;
+}
+
+.links-materias input {
+    background: none;
+    color: mediumblue;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.links-materias input:hover {
+    color: lightblue;
+    text-decoration: underline;
+}
