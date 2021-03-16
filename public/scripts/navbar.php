@@ -17,53 +17,32 @@ echo '
             <a class="nav-link texto-branco" href="/">Página Inicial</a>
           </li>
 
+          <!-- LINK "SOBRE NÓS" -->
+          <li class="nav-item">
+            <a class="nav-link texto-branco" href="/sobre-nos">Sobre Nós</a>
+          </li>
+
           <!-- DROPDOWN -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle texto-branco" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Matérias</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="matematica">
-              <input class="dropdown-item" name="formMateria" type="submit" value="Matemática">
-            </form>
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="fisica">
-              <input class="dropdown-item" name="formMateria" type="submit" value="Física">
-            </form>
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="quimica">
-              <input class="dropdown-item" name="formMateria" type="submit" value="Química">
-            </form>
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="biologia">
-              <input class="dropdown-item" name="formMateria" type="submit" value="Biologia">
-            </form>
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="geografia">
-              <input class="dropdown-item" name="formMateria" type="submit" value="Geografia">
-            </form>
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="literatura">
-              <input class="dropdown-item" name="formMateria" type="submit" value="Literatura">
-            </form>
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="historia">
-              <input class="dropdown-item" name="formMateria" type="submit" value="História">
-            </form>
-            <form method="post" action="/materias">
-              <input type="hidden" name="materia" value="portugues">
-              <input class="dropdown-item" name="formMateria" type="submit" value="Português">
-            </form>
+              <a class="dropdown-item" href="/materia-matematica">Matemática</a>
+              <a class="dropdown-item" href="/materia-fisica">Física</a>
+              <a class="dropdown-item" href="/materia-quimica">Química</a>
+              <a class="dropdown-item" href="/materia-biologia">Biologia</a>
+              <a class="dropdown-item" href="/materia-geografia">Geografia</a>
+              <a class="dropdown-item" href="/materia-literatura">Literatura</a>
+              <a class="dropdown-item" href="/materia-historia">História</a>
+              <a class="dropdown-item" href="/materia-portugues">Português</a>
             </div>
-          </li>
-        </ul>
-
+          </li> 
 
           
-        <ul>
-          <li style="padding-right: 25px; padding-top: 15px; list-style-type: none;">
-           <img src="/public/images/sol.png" id="luz" alt="Modo noturno" onclick="noturno()">
+          <li>
+            <img src="/public/images/sol.png" id="luz" alt="Modo noturno" onclick="noturno()">
           </li>
         </ul>
+
         <!-- FORMULÁRIO "PESQUISA" -->
         <form class="form-inline my-2 my-lg-0" method="post" action="/resultado">
           <input class="form-control mr-sm-2" type="text" name="buscar" placeholder="Pesquisar" aria-label="Pesquisa"/>

@@ -7,17 +7,17 @@ class LoginController
     // Ir para a página de login
     public function verificarLogin()
     {
-        // Verifica se está logado
+        // Só permite continuar se a pessoa estiver logada
         if (Login::isLogged()) {
-            require './app/views/login/administracao.php';
+            require './app/views/admin/administracao.php';
             exit;
         } else {
-            require './app/views/login/login.php';
+            require './app/views/admin/login.php';
             exit;
         }
     }
 
-    // Deslogar
+    // Desconectar
     public function sair() {
         session_unset();
         header('Location: /');
@@ -31,7 +31,7 @@ class LoginController
 
         // Recebe o 'email' e 'senha'
         if (isset($_POST['email']) && isset($_POST['senha'])) {
-            $sql = mysqli_query($connection, "SELECT email, senha, nome FROM usuario WHERE email='".$_POST['email']."' AND senha='".$_POST['senha']."';");
+            $sql = mysqli_query($connection, "select email, senha, nome from usuario WHERE email='".$_POST['email']."' and senha='".$_POST['senha']."';");
             $linha = mysqli_fetch_array($sql);
             $email = $linha['email'];
             $senha = $linha['senha'];

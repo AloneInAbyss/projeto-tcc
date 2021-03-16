@@ -1,11 +1,24 @@
+<?php
+    require './public/scripts/banco.php';
+
+    $id = $_POST['id'];
+
+    $result1 = mysqli_query($connection,"SELECT * FROM resumos WHERE id='".$id."'");
+    $row1 = mysqli_num_rows($result1);
+    if($row1 > 0) {
+    while($linha1 = mysqli_fetch_array($result1)){
+    $nome = $linha1['nome'];
+    $materia = $linha1['materia'];
+    $submateria = $linha1['submateria'];
+    $resumo = $linha1['resumo'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
 
     <!-- BOOTSTRAP CSS, ESTILOS PERSONALIZADOS -->
     <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
@@ -35,40 +48,36 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Início</a></li>
-                    <li class="breadcrumb-item">
-                        <form class="links-materias" method="post" action="/materias">
-                            <input type="hidden" name="materia" value="<?php echo $titulo;?>">
-                            <input name="formMateria" type="submit" value="<?php echo $materia;?>">
-                        </form>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page"><?php echo $submateria;?></li>
+                    <li class="breadcrumb-item"><a href="#">(<?php echo $materia ?>)</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">(<?php echo $submateria ?>)</li>
                 </ol>
             </nav>
 
             <!-- TÍTULO DA PÁGINA -->
-            <h1 class="titulo"><?php echo $nome ?></h1>
-            <h3 class="text-muted"><?php echo $submateria ?></h3>
+            <h1 class="titulo">(<?php echo $nome ?>)</h1>
+            <h3 class="text-muted">(<?php echo $submateria ?>)</h3>
             <hr class="page-header">
 
             <div class="container">
-                <div class="row" style="display: block;">
-                    
-                    <?php echo $resumo; ?>
-                    
+                <div class="row justify-content-center">
+                    <div class="col-sm-8">
+                        <?php echo $resumo; ?>
+                    </div>
                 </div>
-            
+
 
             <!-- CAIXA FLUTUANTE -->
             <div class="float div-ocultar">
                 <p class="my-float">Quer testar seu conhecimento?</p>
                 <br>
                 <form class="form-inline my-2 my-lg-0" method="post" action="/exercicios">
-                    <input type="hidden" name="nome" value="<?php echo $nome; ?>">
-                    <input type="hidden" name="materia" value="<?php echo $materia; ?>">
-                    <input type="hidden" name="submateria" value="<?php echo $submateria; ?>">
-                    <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" style="background-color: rgb(30, 92, 138);" type="submit" value="ir">Exercícios</button>
-                </form>
+                <input type="hidden" name="nome" value="<?php echo $nome; ?>">
+                <input type="hidden" name="materia" value="<?php echo $materia; ?>">
+                <input type="hidden" name="submateria" value="<?php echo $submateria; ?>">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="ir">Pesquisar</button>
+        </form>
             </div>
+            
 
             <hr class="linha-divisoria">
         </div>

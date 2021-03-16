@@ -49,24 +49,5 @@
             padding-bottom: 20px;
         }
     }
+
 /* */
-
-
-.links-materias {
-    display: inline;
-}
-
-.links-materias input {
-    background: none;
-    color: mediumblue;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-}
-
-.links-materias input:hover {
-    color: lightblue;
-    text-decoration: underline;
-}

@@ -8,6 +8,14 @@ switch ($uri) {
             $Controller->paginainicial();
             break;
 
+        case '/resultado':
+            $Controller->resultado();
+            break;    
+
+        case '/sobre-nos':
+            $Controller->sobrenos();
+            break;
+
         case '/materias':
             $Controller->materias();
             break;
@@ -19,14 +27,11 @@ switch ($uri) {
         case '/exercicios':
             $Controller->exercicios();
             break;
-
-        case '/resultado':
-            $Controller->resultado();
-            break;
     /* */
 
     /* ROTAS DE LOGIN */
         case '/login':
+        case '/administracao':
             $LoginController->verificarLogin();
             break;
 
@@ -49,7 +54,7 @@ switch ($uri) {
             $DadosController->alterarAdmin();
             break;
 
-        case '/modificar-admin':
+        case '/modificar-usuario':
             $DadosController->modificarAdmin();
             break;
 
@@ -95,7 +100,6 @@ switch ($uri) {
         /* */
     /* */
 
-    // Rota Padrão
     default:
         $Controller->paginainicial();
         break;

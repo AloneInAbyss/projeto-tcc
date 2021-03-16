@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
-
     <!-- BOOTSTRAP CSS, ESTILOS PERSONALIZADOS -->
     <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/resultado.css">
+    <link rel="stylesheet" href="/public/css/pagina-inicial.css">
 
     <!-- TÍTULO & ÍCONE DO SITE -->
     <title>NOTA 1000 - Página Inicial</title>
@@ -31,21 +28,20 @@
         <!-- CONTAINER -->
         <div class="container marketing">
             <p><?php
+                require './public/scripts/banco.php';
+                $buscar=$_POST['buscar'];
                 $sql = mysqli_query($connection,"select * from resumos WHERE resumo LIKE '%".$buscar."%' OR nome LIKE '%".$buscar."%' OR 
                  materia LIKE '%".$buscar."%' OR submateria LIKE '%".$buscar."%' ");
                 $row = mysqli_num_rows($sql);
                 if($row > 0) {
                     while($linha = mysqli_fetch_array($sql)){
-                        $id = $linha['id'];
+                        $link = $linha['link'];
                         $nome = $linha['nome'];
                         $materia = $linha['materia'];
                         $submateria = $linha['submateria'];
                         $descricao = $linha['descricao'];
                         echo '<br>';
-                        ?><form method="post" action="/conteudos">
-                        <input type="hidden" name="id" value="<?php echo $id ?>">
-                        <h6 style="color:blue"><input name="formResultado" type="submit" value="<?php echo $nome ?>"></h6>
-                    </form>  <?php 
+                        ?><a href="<?php echo $link; ?>"<p><?php echo $nome ?></p></a><?php 
                         echo $materia;
                         echo '<br>';
                         echo $submateria;
@@ -55,9 +51,8 @@
                     }
                 }
                 else{
-                    echo "Desculpe, nenhum resumo foi encontrado!";
+                    echo "Desculpe, nenhum resultado foi encontrado!";
                 }
-
             ?></p>
             <!-- /SEÇÃO - LINKS PARA MATÉRIAS -->
 

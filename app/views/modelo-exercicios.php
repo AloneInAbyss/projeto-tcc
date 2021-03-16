@@ -4,9 +4,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
-
     <!-- BOOTSTRAP CSS, ESTILOS PERSONALIZADOS -->
     <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
     <!-- CSS -->
@@ -27,6 +24,7 @@
         }
 
         function resultado(x, y) {
+            document.getElementById("result"+x).style.display="block";
             resposta = x+y;
 
             if (alternativa==resposta){
@@ -55,16 +53,16 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Início</a></li>
-                    <li class="breadcrumb-item"><a href="#"><?php echo $_POST['materia']?></a></li>
-                    <li class="breadcrumb-item"><a href="#"><?php echo $_POST['submateria']?></a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Exercicios <?php echo $_POST['nome']?></li>
+                    <li class="breadcrumb-item"><a href="#">(<?php echo $_POST['materia']?>)</a></li>
+                    <li class="breadcrumb-item"><a href="#">(<?php echo $_POST['submateria']?>)</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">(Exercicios <?php echo $_POST['nome']?>)</li>
                 </ol>
             </nav>
             
 
             <!-- TÍTULO DA PÁGINA -->
-            <h1 class="titulo">Exercícios - <?php echo $_POST['nome']?></h1>
-            <h3 class="text-muted"><?php echo $_POST['submateria']?></h3>
+            <h1 class="titulo">(Exercicios <?php echo $_POST['nome']?>)</h1>
+            <h3 class="text-muted">(<?php echo $_POST['submateria']?>)</h3>
             <hr class="page-header">
 
             
@@ -85,13 +83,14 @@
                         $alternativa3 = $linha['alternativa3'];
                         $alternativa4 = $linha['alternativa4'];
                         $alternativa5 = $linha['alternativa5'];
+                        $resolucao = $linha['resolucao'];
                         $imagem = $linha['imagem'];
                     
                         ?>
                         <p><?php echo $id.") ".$questao ?></p>
                         <br>
                         <?php if ($imagem<>""){ ?>
-                        <center><img class="img-fluid" src="/public/images/<?php echo $imagem; ?>" alt="<?php echo $imagem; ?>"></center>    
+                        <center><img src="/public/images/<?php echo $imagem; ?>" alt="<?php echo $imagem; ?>"></center>    
                         <?php } ?>
                         <br>
                         <input id=<?php echo '"'.$id.$alternativa1.'"'; ?> type="radio" class="option-input radio" name="gender" value="questao" onclick="<?php echo "show(".$id.",'".$alternativa1."')"; ?>"><?php echo $alternativa1 ; ?><br>
@@ -102,7 +101,7 @@
                         
                         <br><br>
                         <button id=<?php echo '"confirm'.$id.'"'; ?> type="button" class="btn btn-outline-danger button-float" style="display:none" onclick="<?php echo "resultado(".$id.",'".$resposta."')"; ?>">Confirmar</button>
-                        
+                        <button id=<?php echo '"result'.$id.'"'; ?> type="button" class="btn btn-outline-danger button-float" style="display:none">Resolução</button>
                         <br>
                         
                         <?php

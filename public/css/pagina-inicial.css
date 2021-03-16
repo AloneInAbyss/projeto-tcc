@@ -20,7 +20,7 @@
 
 /* DEIXA OS LINKS DAS MATÉRIAS EM LETRA MAIÚSCULA */
 
-.links-materias input {
+input {
   margin-top: 15px;
   text-transform: uppercase;
   background: none;

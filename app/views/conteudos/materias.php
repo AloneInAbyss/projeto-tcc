@@ -1,11 +1,50 @@
+<?php 
+
+require './public/scripts/banco.php';
+
+$materias = $_POST['materia'] ;
+
+switch ($materias){
+    case "matematica":
+    $titulo = "Matemática";
+    break;
+
+    case "biologia":
+    $titulo = "Biologia";
+    break;
+
+    case "quimica":
+    $titulo = "Química";
+    break;
+
+    case "fisica":
+    $titulo = "Física";
+    break;
+
+    case "historia":
+    $titulo = "História";
+    break;
+
+    case "portugues":
+    $titulo = "Língua Portuguesa";
+    break;
+
+    case "literatura":
+    $titulo = "Líteratura";
+    break;
+
+    case "geografia":
+    $titulo = "Geografia";
+    break;
+}
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
 
     <!-- BOOTSTRAP CSS, ESTILOS PERSONALIZADOS -->
     <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
@@ -35,7 +74,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Início</a></li>
-                    <li class="breadcrumb-item"><?php echo $titulo;?></li>
+                    <li class="breadcrumb-item"><a href="#"><?php echo $titulo; ?></a></li>
                     <li class="breadcrumb-item active" aria-current="page">Sumário</li>
                 </ol>
             </nav>
@@ -50,22 +89,22 @@
                 <?php 
                 $result = mysqli_query($connection,"SELECT DISTINCT submateria FROM resumos WHERE materia='".$materias."'");
                 $row = mysqli_num_rows($result);
-                if ($row > 0) {
+                if($row > 0) {
                     while($linha = mysqli_fetch_array($result)){
                         $submateria = $linha['submateria'];
                   
                 ?>
                 <div class="card">
                     <!-- HEADER DO CARD -->
-                    <div class="card-header" id="heading<?php echo $submateria ?>">
+                    <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<?php echo $submateria ?>" aria-expanded="true" aria-controls="collapse<?php echo $submateria ?>">
-                            <?php echo $submateria; ?>
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            (<?php echo $submateria; ?>)
                             </button>
                         </h5>
                     </div>
 
-                    <div id="collapse<?php echo $submateria ?>" class="collapse " aria-labelledby="heading<?php echo $submateria ?>" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <!-- BODY DO CARD -->
                         <div class="card-body">
                             <!-- LINHA -->
